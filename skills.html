@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills | Priyanshu</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: black; /* Consistent black background */
+            color: white;
+            min-height: 100vh;
+            display: flex; /* Use flexbox for body to manage layout */
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        .navbar { /* Using .navbar for consistency with your provided projects.html */
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem 0; /* Adjusted padding for consistency */
+            background-color: #111; /* Dark background for navbar */
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 2rem; /* Adjusted gap for consistency */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.1rem; /* Consistent font size */
+            transition: 0.3s ease; /* Smooth transition for hover */
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #00f0ff;
+            border-bottom: 2px solid #00f0ff;
+            padding-bottom: 4px;
+        }
+
+        .section-container {
+            flex: 1; /* Allows the container to grow */
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            /* Removed fadeIn animation from here to prevent conflicts */
+            width: 100%; /* Ensure it takes full width */
+            box-sizing: border-box; /* Include padding in width */
+            text-align: center; /* Center the heading */
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 25px; /* Gap between skill cards */
+            max-width: 900px; /* Max width for the grid */
+            margin: 0 auto; /* Center the grid */
+        }
+
+        .skill-card {
+            background: #1f1f1f; /* Dark background for cards */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1); /* Subtle glow effect */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* Start hidden for animation */
+            animation: slideUp 0.8s ease forwards; /* Apply slideUp animation */
+            text-align: left; /* Align text within cards */
+        }
+
+        /* Staggered animation delays for each skill card */
+        .skill-card:nth-child(1) { animation-delay: 0.2s; }
+        .skill-card:nth-child(2) { animation-delay: 0.4s; }
+        .skill-card:nth-child(3) { animation-delay: 0.6s; }
+        /* Removed delay for the removed card */
+
+        .skill-card:hover {
+            transform: translateY(-6px); /* Lift effect on hover */
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Enhanced glow on hover */
+        }
+
+        .skill-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #00f0ff; /* Blue color for skill categories */
+            font-size: 1.3rem;
+        }
+
+        .skill-card ul {
+            list-style: none; /* Remove default list bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-card li {
+            color: #ccc; /* Light grey for skill items */
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        /* Keyframe animations (copied from projects.html) */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+            .navbar a {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+            }
+            .skill-card {
+                padding: 15px;
+            }
+            .skill-card h3 {
+                font-size: 1.2rem;
+            }
+            .skill-card li {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+                padding: 1rem 0;
+            }
+            .section-container {
+                padding: 20px 10px;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="skills.html" class="active">Skills</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="section-container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>🌐 Frontend</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>🔐 Programming Languages</h3>
+                <ul>
+                    <li>C Programming</li>
+                    <li>C++</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>📊 Tools & Platforms</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>VS Code</li>
+                    <li>Firebase</li>
+                    <li>Canva</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

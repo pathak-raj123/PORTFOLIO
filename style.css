@@ -1,0 +1,207 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with Gradient Background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a); /* Dark Gradient */
+    color: #ffffff;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar ul li a {
+    color: #00ffff;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.3s, text-shadow 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow hero section to take available space */
+    padding: 1rem; /* Adjust padding for smaller screens */
+}
+
+/* Glowing Card */
+.card {
+    background-color: #121212;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column; /* Default to column for mobile first */
+    gap: 30px;
+    padding: 30px; /* Slightly reduce padding for mobile */
+    width: 95%; /* Adjust width for mobile */
+    max-width: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center text for mobile */
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.2);
+}
+
+/* Left Section (Text Content) */
+.left {
+    flex: none; /* Remove flex-grow on mobile */
+    width: 100%; /* Take full width */
+    order: 2; /* On mobile, place text AFTER image */
+}
+
+.tag {
+    font-size: 1.1rem; /* Slightly smaller on mobile */
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2rem; /* Adjusted for mobile */
+    color: #ffffff;
+    margin-bottom: 15px; /* Adjusted for mobile */
+}
+
+.desc {
+    font-size: 0.95rem; /* Adjusted for mobile */
+    color: #cccccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.contact-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    gap: 10px; /* Reduce gap */
+    flex-wrap: wrap;
+    align-items: center; /* Center buttons horizontally */
+}
+
+.btn {
+    width: 100%; /* Make buttons full width on mobile */
+    max-width: 250px; /* Limit max width for buttons */
+    display: inline-flex;
+    justify-content: center; /* Center content within button */
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px; /* Adjusted padding */
+    border: none;
+    background-color: #00ffff;
+    color: #000;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #00cccc;
+    transform: translateY(-2px);
+}
+
+/* Right Section (Image) */
+.right {
+    flex: none; /* Remove flex-grow on mobile */
+    width: 100%; /* Take full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Add some space below the image */
+    order: 1; /* On mobile, place image FIRST */
+}
+
+.right img {
+    width: 200px; /* Smaller image on mobile */
+    height: 200px; /* Smaller image on mobile */
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.glow-text {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+/* Media Queries for Desktop (Revert to original layout for larger screens) */
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row; /* Desktop: side-by-side */
+        text-align: left;
+        padding: 40px;
+    }
+
+    .left {
+        flex: 1; /* Desktop: takes remaining space */
+        width: auto;
+        order: 0; /* Reset order to default (HTML order) -> Text is first in HTML */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .tag {
+        font-size: 1.2rem;
+    }
+
+    .desc {
+        font-size: 1rem;
+    }
+
+    .contact-buttons {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .btn {
+        width: auto;
+        max-width: none;
+        padding: 10px 20px;
+    }
+
+    .right {
+        flex: 1; /* Desktop: takes its share of space */
+        width: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        order: 0; /* Reset order to default (HTML order) -> Image is second in HTML */
+    }
+
+    .right img {
+        width: 250px;
+        height: 250px;
+    }
+}

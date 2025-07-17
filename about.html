@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About | Priyanshu</title>
+    <!-- You can link to an external style.css if you have common styles,
+         otherwise, the styles are embedded here for simplicity. -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: black;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            background: transparent;
+            font-weight: 500;
+            width: 100%; /* Ensure nav spans full width */
+            max-width: 1200px; /* Limit nav width for larger screens */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00f0ff;
+            border-bottom: 2px solid #00f0ff;
+            padding-bottom: 4px;
+        }
+
+        .container {
+            flex: 1; /* Allows the container to grow and push the footer down if present */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            width: 100%; /* Ensure container takes full width */
+            box-sizing: border-box; /* Include padding in width calculation */
+            /* Added fadeIn animation to the container */
+            animation: fadeIn 1s ease-in;
+        }
+
+        .card {
+            background: #0d0d0d; /* Dark background for the card */
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            padding: 3rem;
+            max-width: 800px; /* Max width for the card */
+            width: 90%; /* Responsive width */
+            text-align: center;
+            box-sizing: border-box; /* Include padding in width calculation */
+            /* Added slideUp animation to the card */
+            opacity: 0; /* Start hidden for animation */
+            animation: slideUp 0.8s ease forwards;
+            animation-delay: 0.2s; /* Delay to allow fadeIn on container first */
+        }
+
+        .card h1 {
+            font-size: 2.5rem;
+            color: #00f0ff; /* Bright blue color for heading */
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px #00f0ff; /* Glow effect for heading */
+        }
+
+        .card p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #f1f1f1; /* Light grey for paragraph text */
+            margin-bottom: 1rem; /* Add some space below paragraphs */
+        }
+
+        .card strong {
+            color: #fff; /* White for strong text */
+        }
+
+        /* Keyframe animations from projects.html */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 2rem;
+                width: 95%; /* Make card slightly wider on small screens */
+            }
+
+            .card h1 {
+                font-size: 2rem;
+            }
+
+            .card p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column; /* Stack nav items vertically on very small screens */
+                align-items: center;
+            }
+            nav a {
+                padding: 0.5rem 0;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .card h1 {
+                font-size: 1.8rem;
+            }
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar matching the index.html screenshot -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="skills.html">Skills</a> <!-- Added Skills based on screenshot -->
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>About Me</h1>
+            <p>
+              <strong>Hello everyone  I'm Priyanshu,</strong> a software enthusiast driven by curiosity and the desire to build impactful, user-focused solutions. Whether it's writing clean, scalable code or collaborating with a team to tackle complex problems, I thrive on continuous learning and improvement
+            <p>
+                My journey into web development began with a fascination for how digital experiences are built. I love transforming ideas into functional and aesthetically pleasing websites. My focus is on creating intuitive user interfaces and ensuring a seamless experience across all devices.
+            </p>
+            <p>
+                Beyond coding, I enjoy exploring new design trends, experimenting with interactive animations, and continuously honing my problem-solving skills. I believe that a great website is a blend of strong technical foundations and thoughtful design.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

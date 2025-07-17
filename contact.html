@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Priyanshu</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: black; /* Consistent black background */
+            color: white;
+            min-height: 100vh;
+            display: flex; /* Use flexbox for body to manage layout */
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem 0;
+            background-color: #111; /* Dark background for navbar */
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: 0.3s ease;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #00f0ff;
+            border-bottom: 2px solid #00f0ff;
+            padding-bottom: 4px;
+        }
+
+        .section-container {
+            flex: 1; /* Allows the container to grow */
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center; /* Center the heading and content */
+            animation: fadeIn 1s ease-in; /* Apply fadeIn animation */
+            width: 100%; /* Ensure it takes full width */
+            box-sizing: border-box; /* Include padding in width */
+            display: flex; /* Use flexbox to center content vertically within container */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+        }
+
+        .contact-card { /* New class for the content box */
+            background: #1f1f1f; /* Dark background for the card */
+            border-radius: 15px;
+            padding: 3rem; /* Increased padding for a better look */
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1); /* Subtle glow effect */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* Start hidden for animation */
+            animation: slideUp 0.8s ease forwards; /* Apply slideUp animation */
+            animation-delay: 0.2s; /* Delay for staggered effect */
+            max-width: 600px; /* Max width for the contact card */
+            width: 90%; /* Responsive width */
+            box-sizing: border-box; /* Include padding in width */
+            margin-top: 20px; /* Space from heading */
+        }
+
+        .contact-card p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #f1f1f1;
+            margin-bottom: 15px; /* Space between contact lines */
+        }
+
+        .contact-card p:last-child {
+            margin-bottom: 0; /* No margin for the last paragraph */
+        }
+
+        .contact-card a {
+            color: #00f0ff; /* Blue color for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #00d0e0; /* Slightly darker blue on hover */
+            text-decoration: underline;
+        }
+
+        /* Keyframe animations */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+            .navbar a {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .contact-card {
+                padding: 2rem;
+            }
+            .contact-card p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+                padding: 1rem 0;
+            }
+            .section-container {
+                padding: 20px 10px;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .contact-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="section-container">
+        <h2>Contact Me</h2>
+        <div class="contact-card"> <!-- Content wrapped in a new card div -->
+            <p>📧 Email: <a href="mailto:priyanshupathak059@gmail.com">priyanshupathak059@gmail.com</a></p>
+            <p>🔗 LinkedIn: <a href= "https://www.linkedin.com/in/priyanshu-pathak-88a86032a"target="_blank">@Priyanshu Pathak</a></p>
+            <p>💻 GitHub: <a href="https://github.com/pathak-raj123" target="_blank">github.com/pathak-raj123</a></p>
+        </div>
+    </div>
+</body>
+</html>

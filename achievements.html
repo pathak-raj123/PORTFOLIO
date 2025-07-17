@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Achievements | Priyanshu</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            /* Changed background to black to match index.html */
+            background-color: black;
+            color: white;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        nav {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00f0ff;
+        }
+
+        .container {
+            padding: 40px 20px;
+            text-align: center;
+            /* Added fadeIn animation to the container */
+            animation: fadeIn 1s ease-in;
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            color: #00f0ff;
+            text-shadow: 0 0 15px #00f0ff;
+            margin-bottom: 30px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .achievement-card {
+            background-color: #121212;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.1); /* Adjusted rgba for clarity */
+            border: 1px solid #1f1f1f;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Added slideUp animation to the cards */
+            opacity: 0; /* Start hidden for animation */
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        /* Animation delays for staggered effect */
+        .achievement-card:nth-child(1) { animation-delay: 0.2s; }
+        .achievement-card:nth-child(2) { animation-delay: 0.4s; }
+        /* Removed delays for the removed cards */
+
+
+        .achievement-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4); /* Adjusted rgba for clarity */
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #00f0ff;
+            margin-bottom: 10px;
+        }
+
+        .achievement-desc {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* Keyframe animations */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+            .container h1 {
+                font-size: 2rem;
+            }
+            .achievements-grid {
+                gap: 20px;
+            }
+            .achievement-card {
+                padding: 15px;
+            }
+            .achievement-title {
+                font-size: 1.1rem;
+            }
+            .achievement-desc {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 0.8rem;
+            }
+            nav a {
+                font-size: 0.85rem;
+            }
+            .container {
+                padding: 20px 10px;
+            }
+            .container h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="achievements.html" class="active">Achievements</a>
+        <a href="skills.html">Skills</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Achievements</h1>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-title">🥇 Winner - ML Hackathon @ BIT</div>
+                <div class="Hackathon.jpg">Secured 1st position in BIT's AI Hackathon by building an intelligent medical triage assistant.</div>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-title">🎓 EA Software Engineering Certificate</div>
+                <div class="achievement-desc">Completed enterprise-level software engineering training certified by EA Games on scalable web systems.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
